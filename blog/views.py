@@ -155,7 +155,7 @@ def catagory(request, category_id):
     page = request.GET.get('page', 1)
     entry_list, paginator = make_paginator(entries, page)
     page_date = pagination_data(paginator, page)
-    return render(request,'blog/index.html', locals())
+    return render(request, 'blog/index.html', locals())
 
 def tag(request, tag_id):
     # t = models.Tag.objects.get(id=tag_id)
@@ -168,7 +168,7 @@ def tag(request, tag_id):
     page = request.GET.get('page', 1)
     entry_list, paginator = make_paginator(entries, page)
     page_date = pagination_data(paginator, page)
-    return render(request,'blog/index.html', locals())
+    return render(request, 'blog/index.html', locals())
 
 def search(request):
 
@@ -184,7 +184,7 @@ def search(request):
     page = request.GET.get('page', 1)
     entry_list, paginator = make_paginator(entries, page)
     page_date = pagination_data(paginator, page)
-    return render(request,'blog/index.html', locals())
+    return render(request, 'blog/index.html', locals())
 
 def archives(request, year, month):
     entries = models.Entry.objects.filter(created_time__year=year, created_time__month=month)
@@ -192,7 +192,7 @@ def archives(request, year, month):
     page = request.GET.get('page', 1)
     entry_list, paginator = make_paginator(entries, page)
     page_date = pagination_data(paginator, page)
-    return render(request,'blog/index.html', locals())
+    return render(request, 'blog/index.html', locals())
 
 def permission_denied(request, exception):
     return render(request, 'blog/403.html', locals())
